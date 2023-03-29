@@ -1,0 +1,19 @@
+<h2>if else in Django template</h2>
+{% if is_authenticated %}
+    <h2>Hello {{name}}</h2>
+{% else %}
+    <h2>Hello User</h2>
+{% endif %}
+
+
+<h2>{{first_list.0}}</h2>
+<h2>{{temp_object.x}}</h2>
+<h2>Age: {{age}}</h2>
+<h2>For loops in Django Template</h2>
+{% for x in first_list %}
+    <p>First: {{x}}</p>
+{% endfor %}
+<h1>Filters</h1>
+{{first_list|length}}
+{{first_list|length_is:"4"}}
+{% comment "First Django comment " %}fasdf sdfasdfas dsfas{% endcomment %}
