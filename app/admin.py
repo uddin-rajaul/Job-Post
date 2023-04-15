@@ -6,7 +6,7 @@ class JobAdmin(admin.ModelAdmin):
     list_display = ('__str__','title', 'date', 'salary',)
     list_filter = ('date','salary', 'expiry',)
     search_fields = ('title','description', 'salary',)
-    search_help_text = "Write in your Query and hit 'Search'!!!"
+    search_help_text = "Write in your Query and hit 'Search'  !!!"
     # fields = (('title', 'description'), 'expiry',)
     # exclude = ('title',)
     fieldsets = (
