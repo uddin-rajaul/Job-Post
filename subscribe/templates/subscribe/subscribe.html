@@ -9,16 +9,17 @@
 <body>
     <form method="post">
         {% csrf_token %}
+        {{form.as_p}}
 
-        {% for field in form %}
+        {% comment %} {% for field in form %}
             <div class="subscribe_field">
                 {{field.errors}}
                 <label for="{{ field.id_for_label }}">{{ field.label }}</label>
 
-                {% comment %} {{field.label_tag}} {% endcomment %}
+                {% comment %} {{field.label_tag}} 
                 {{field}}
             </div>
-        {% endfor %}
+        {% endfor %} {% endcomment %}
 
         {% comment %} <div class="Subscribe_field">
             {{ form.first_name.errors }}
