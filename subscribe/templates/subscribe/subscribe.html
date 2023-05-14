@@ -10,6 +10,37 @@
     <form method="post">
         {% csrf_token %}
 
+        {% for field in form %}
+            <div class="subscribe_field">
+                {{field.errors}}
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+
+                {% comment %} {{field.label_tag}} {% endcomment %}
+                {{field}}
+            </div>
+        {% endfor %}
+
+        {% comment %} <div class="Subscribe_field">
+            {{ form.first_name.errors }}
+            <label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}</label>
+            {{ form.first_name }}
+        </div>
+
+        <div class="Subscribe_field">
+            {{ form.last_name.errors }}
+            <label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}</label>
+            {{ form.last_name }}
+        </div>
+
+        <div class="Subscribe_field">
+            {{ form.email.errors }}
+
+            <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+            {{ form.email }}
+        </div> {% endcomment %}
+        <input type="submit", value= "Submit">
+        {% comment %} {% csrf_token %}
+
         {% if email_error_empty %}
             <p>{{ email_error_empty }}</p>
         {% endif %} 
@@ -23,7 +54,9 @@
         <label for="email">Email</label>
         <input type="email", id="email", name="email", placeholder = "Your Email" required>
         <br>
-        <input type="submit", value="Submit">
+        <input type="submit", value="Submit"> 
+        {% endcomment %}
+        
 
     </form>
     
